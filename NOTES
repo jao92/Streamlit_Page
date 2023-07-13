@@ -1,0 +1,7 @@
+DEPENDENCIES
+pip install streamlit
+pip install streamlit-lottie
+
+
+RUN THE SERVER
+streamlit run app.py
