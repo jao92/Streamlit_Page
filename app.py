@@ -1,9 +1,9 @@
 import streamlit
 import requests 
-from streamlit_lottie import st_lottie # 
+from streamlit_lottie import st_lottie 
 from PIL import Image
 
-# https://www.webfx.com/tools/emoji-cheat-sheet/
+# https://www.webfx.com/tools/emoji-cheat-sheet/ 
 streamlit.set_page_config(page_title="My web page with Streamlit", page_icon="rocket", layout="wide")
 
 
@@ -11,11 +11,12 @@ streamlit.set_page_config(page_title="My web page with Streamlit", page_icon="ro
 def local_css(file_name):
     with open(file_name) as f:
         streamlit.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-local_css("style/styles.css")
+local_css("style/styles.css") # Your Route
 
 
 
 # LOAD LOTTIE ANIMATION
+# Take a look: https://lottiefiles.com/
 def load_lottieurl(url):
     r = requests.get(url)
     if r.status_code != 200:
@@ -25,23 +26,22 @@ def load_lottieurl(url):
 
 # IMG/LOTTIE ANIMATIONS
 lottie_codding = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_vbaerjlq.json")
-img_contact_1 = Image.open("img/1.jpg")
-img_contact_2 = Image.open("img/3.jpg")
+img_contact_1 = Image.open("img/1.jpg") # From your IMG folder
+img_contact_2 = Image.open("img/3.jpg") # From your IMG folder
 
 
 
 
 with streamlit.container():
-    streamlit.subheader("Hi there! I'm Jair")
-    streamlit.title("A freelance developer")
-    streamlit.write("I use diferent technologies like Python, HTML, CSS, and more...")
-    streamlit.write("[Learn More >](http://google.com)")
+    streamlit.subheader("Hi there!")
+    streamlit.title("I am a freelance developer")
+    streamlit.write("I use different technologies like Python, HTML, CSS, and more...")
+    streamlit.write("[Learn More >](http://google.com)") # Link 
 
 
 # What I do 
-
 with streamlit.container():
-    streamlit.write("---")
+    streamlit.write("---") # Separator
     left_column, right_column = streamlit.columns(2)
     with left_column:
         streamlit.header("What I do")
@@ -54,7 +54,7 @@ with streamlit.container():
             """
         )
 
-        streamlit.write("[YouTube Chanel >] (http://youtube.com)")
+        streamlit.write("[YouTube Chanel >] (http://youtube.com)") # Link
 
 
     with right_column:
@@ -78,7 +78,7 @@ with streamlit.container():
             """
         )
 
-        streamlit.markdown("[Watch Video...]((http://youtube.com))")
+        streamlit.markdown("[Watch Video...]((http://youtube.com))") # Link
 
 
 
@@ -91,10 +91,10 @@ with streamlit.container():
         streamlit.write(
             """
             Want to add a contact form to your Streamlit App?
-            In this Video I'm going to show you ho to do it
+            In this tutorial I'm going to show you how to do it
             """
         )
-        streamlit.markdown("[Watch Video...]((http://youtube.com))")
+        streamlit.markdown("[Watch Video...]((http://youtube.com))") # Link
 
 
 with streamlit.container():
@@ -103,7 +103,7 @@ with streamlit.container():
     streamlit.write("##")
 
     contact_form = """
-        <form action="https://formsubmit.co/jaorem92@gmail.com" method="POST">
+        <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email"  required>
